@@ -45,8 +45,41 @@ header.with-boxed {
 	background-size: 100% 100%;
 	width: 100%;
 }
-.navbar-left { width: 100%; }
-.navbar-nav.second { float: right; }
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Vertically center items */
+    height: 100px; /* Adjust height as needed */
+    padding: 0 20px; /* Add padding to the sides */
+    background-color: #f8f9fa; /* Optional: Background color */
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+}
+
+.navbar-left ul, .navbar-right ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-left li, .navbar-right li {
+    margin: 0 10px; /* Add spacing between items */
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: center; /* Horizontally center the logo */
+    align-items: center; /* Vertically center the logo */
+}
+
+.navbar-header img {
+    display: block;
+}
+/* .navbar-left, .navbar-right { display:flex; }
+.navbar-nav.second { float: right; } */
 /*Typography*/
 a {
 	color: #ffa02f;
