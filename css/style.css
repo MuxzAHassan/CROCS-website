@@ -14,59 +14,96 @@ a, input, button {
 	-o-transition: all ease .2s;
 	transition: all ease .2s;
 }
-/* Header Styles */
+/* Main header background */
 header {
-    background: url('../images/big_line_bg.jpg') no-repeat center center;
-    background-size: cover;
+    background: url('../images/big_line_bg.jpg') no-repeat;
+    background-size: 100% 100%;
     width: 100%;
-    position: relative;
+}
+
+/* Navbar brand (logo and title) styles */
+header .navbar-default .navbar-brand, 
+header .navbar-default .navbar-brand:hover, 
+header.with-boxed .navbar-default .navbar-brand, 
+header.with-boxed .navbar-default .navbar-brand:hover {
+    color: #fff;
+    background: #2f302f;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 25px 15px 45px 15px;
+    margin-top: 0px;
+    font-weight: 100;
+    font-family: 'Questrial', sans-serif;
+}
+
+/* Navbar brand small text (if any) */
+header .navbar-default .navbar-brand small, 
+header.with-boxed .navbar-default .navbar-brand small {
+    color: #fff;
+}
+
+/* Main header container */
+header.main__header {
+    background: none;
+    position: absolute;
     z-index: 100;
+    width: 100%;
 }
 
-/* Navbar Header (Logo and toggle button) */
-header .navbar-header {
-    display: flex;
-    justify-content: center; /* Center the logo */
-    align-items: center;
-}
-
-/* Logo size */
-header .navbar-header img {
-    display: block;
-    max-height: 80px; /* Ensure logo doesn't grow too large */
-}
-
-/* Navbar Link Styles */
-header .navbar-nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header .navbar-nav li {
-    margin: 0 10px;
-}
-
-header .navbar-nav li a {
-    text-decoration: none;
-    color: #fff; /* Make links white */
+/* Boxed layout background */
+header.with-boxed {
+    position: relative;
+    background: url('../images/big_line_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
 }
 
 /* Left and right navbar sections */
 .navbar-left, .navbar-right {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align vertically */
 }
 
-/* Right Navbar menu for larger screens */
-.navbar-nav.navbar-right {
-    margin-left: auto;
+/* Navbar menu items */
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Right navigation section */
+.navbar-nav.second {
+    display: flex;
+    margin-left: auto; /* Push right items to the right */
+}
+
+.navbar-nav li {
+    margin: 0 10px; /* Space between items */
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: #fff; /* Ensure text is visible */
+}
+
+/* Logo container centering */
+header .navbar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+header .navbar-header img {
+    display: block;
+    max-height: 80px; /* Adjust logo size */
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    header .navbar-header {
-        justify-content: center;
+    header .navbar {
+        flex-direction: column;
+        align-items: center;
     }
 
     .navbar-left, .navbar-right {
@@ -77,6 +114,10 @@ header .navbar-nav li a {
     .navbar-nav.second {
         float: none;
         margin: 10px 0;
+    }
+
+    .navbar-nav li {
+        margin: 5px 0;
     }
 
     header .navbar-header img {
