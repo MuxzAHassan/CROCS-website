@@ -14,97 +14,59 @@ a, input, button {
 	-o-transition: all ease .2s;
 	transition: all ease .2s;
 }
-/*Header*/
-/* Main header background */
+/* Header Styles */
 header {
-    background: url('../images/big_line_bg.jpg') no-repeat;
-    background-size: 100% 100%;
+    background: url('../images/big_line_bg.jpg') no-repeat center center;
+    background-size: cover;
     width: 100%;
-}
-
-/* Navbar brand (logo and title) styles */
-header .navbar-default .navbar-brand, 
-header .navbar-default .navbar-brand:hover, 
-header.with-boxed .navbar-default .navbar-brand, 
-header.with-boxed .navbar-default .navbar-brand:hover {
-    color: #fff;
-    background: #2f302f;
-    font-size: 18px;
-    text-transform: uppercase;
-    padding: 25px 15px 45px 15px;
-    margin-top: 0px;
-    font-weight: 100;
-    font-family: 'Questrial', sans-serif;
-}
-
-/* Navbar brand small text (if any) */
-header .navbar-default .navbar-brand small, 
-header.with-boxed .navbar-default .navbar-brand small {
-    color: #fff;
-}
-
-/* Main header container */
-header.main__header {
-    background: none;
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-}
-
-/* Boxed layout background */
-header.with-boxed {
     position: relative;
-    background: url('../images/big_line_bg.jpg') no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
+    z-index: 100;
 }
 
-/* Left and right navbar sections */
-.navbar-left, .navbar-right {
+/* Navbar Header (Logo and toggle button) */
+header .navbar-header {
     display: flex;
-    align-items: center; /* Align vertically */
+    justify-content: center; /* Center the logo */
+    align-items: center;
 }
 
-/* Navbar menu items */
-.navbar-nav {
+/* Logo size */
+header .navbar-header img {
+    display: block;
+    max-height: 80px; /* Ensure logo doesn't grow too large */
+}
+
+/* Navbar Link Styles */
+header .navbar-nav {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Right navigation section */
-.navbar-nav.second {
-    display: flex;
-    margin-left: auto; /* Push right items to the right */
+header .navbar-nav li {
+    margin: 0 10px;
 }
 
-.navbar-nav li {
-    margin: 0 10px; /* Space between items */
-}
-
-.navbar-nav li a {
+header .navbar-nav li a {
     text-decoration: none;
-    color: #fff; /* Ensure text is visible */
+    color: #fff; /* Make links white */
 }
 
-/* Logo container centering */
-header .navbar-header {
+/* Left and right navbar sections */
+.navbar-left, .navbar-right {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex: 1;
 }
 
-header .navbar-header img {
-    display: block;
-    max-height: 80px; /* Adjust logo size */
+/* Right Navbar menu for larger screens */
+.navbar-nav.navbar-right {
+    margin-left: auto;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    header .navbar {
-        flex-direction: column;
-        align-items: center;
+    header .navbar-header {
+        justify-content: center;
     }
 
     .navbar-left, .navbar-right {
@@ -117,27 +79,10 @@ header .navbar-header img {
         margin: 10px 0;
     }
 
-    .navbar-nav li {
-        margin: 5px 0;
-    }
-
     header .navbar-header img {
         max-height: 60px;
     }
 }
-
-header .navbar-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-header .navbar-header img {
-    display: block;
-    max-height: 80px; /* Adjust logo size as needed */
-}
-
 
 /*Typography*/
 a {
