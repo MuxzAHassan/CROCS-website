@@ -15,71 +15,130 @@ a, input, button {
 	transition: all ease .2s;
 }
 /*Header*/
+/* Main header background */
 header {
-	background: url('../images/big_line_bg.jpg') no-repeat;
-	background-size: 100% 100%;
-	width: 100%;
-}
-header .navbar-default .navbar-brand, header .navbar-default .navbar-brand:hover, header.with-boxed .navbar-default .navbar-brand, header.with-boxed .navbar-default .navbar-brand:hover {
-	color: #fff;
-	background: #2f302f;
-	font-size: 18px;
-	text-transform: uppercase;
-	padding: 25px 15px 45px 15px;
-	margin-top: 0px;
-	font-weight: 100;
-	font-family: 'Questrial', sans-serif;
-}
-header .navbar-default .navbar-brand small, header.with-boxed .navbar-default .navbar-brand small {
-	color: #fff;
-}
-header.main__header {
-	background: none;
-	position: absolute;
-	z-index: 100;
-	width: 100%;
-}
-header.with-boxed {
-	position: relative;
-	background: url('../images/big_line_bg.jpg') no-repeat;
-	background-size: 100% 100%;
-	width: 100%;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between; /* Distribute space evenly */
-    align-items: center; /* Vertically center items */
-    height: 100px; /* Adjust height as needed */
-    padding: 0 20px; /* Add padding to the sides */
-    background-color: #f8f9fa; /* Optional: Background color */
+    background: url('../images/big_line_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
 }
 
+/* Navbar brand (logo and title) styles */
+header .navbar-default .navbar-brand, 
+header .navbar-default .navbar-brand:hover, 
+header.with-boxed .navbar-default .navbar-brand, 
+header.with-boxed .navbar-default .navbar-brand:hover {
+    color: #fff;
+    background: #2f302f;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 25px 15px 45px 15px;
+    margin-top: 0px;
+    font-weight: 100;
+    font-family: 'Questrial', sans-serif;
+}
+
+/* Navbar brand small text (if any) */
+header .navbar-default .navbar-brand small, 
+header.with-boxed .navbar-default .navbar-brand small {
+    color: #fff;
+}
+
+/* Main header container */
+header.main__header {
+    background: none;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+/* Boxed layout background */
+header.with-boxed {
+    position: relative;
+    background: url('../images/big_line_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+/* Left and right navbar sections */
 .navbar-left, .navbar-right {
     display: flex;
+    align-items: center; /* Align vertically */
 }
 
-.navbar-left ul, .navbar-right ul {
-    display: flex;
+/* Navbar menu items */
+.navbar-nav {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.navbar-left li, .navbar-right li {
-    margin: 0 10px; /* Add spacing between items */
-}
-
-.navbar-header {
+/* Right navigation section */
+.navbar-nav.second {
     display: flex;
-    justify-content: center; /* Horizontally center the logo */
-    align-items: center; /* Vertically center the logo */
+    margin-left: auto; /* Push right items to the right */
 }
 
-.navbar-header img {
-    display: block;
+.navbar-nav li {
+    margin: 0 10px; /* Space between items */
 }
-/* .navbar-left, .navbar-right { display:flex; }
-.navbar-nav.second { float: right; } */
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: #fff; /* Ensure text is visible */
+}
+
+/* Logo container centering */
+header .navbar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+header .navbar-header img {
+    display: block;
+    max-height: 80px; /* Adjust logo size */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-left, .navbar-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar-nav.second {
+        float: none;
+        margin: 10px 0;
+    }
+
+    .navbar-nav li {
+        margin: 5px 0;
+    }
+
+    header .navbar-header img {
+        max-height: 60px;
+    }
+}
+
+header .navbar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+header .navbar-header img {
+    display: block;
+    max-height: 80px; /* Adjust logo size as needed */
+}
+
+
 /*Typography*/
 a {
 	color: #ffa02f;
