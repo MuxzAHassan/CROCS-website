@@ -14,38 +14,41 @@ a, input, button {
 	-o-transition: all ease .2s;
 	transition: all ease .2s;
 }
-/* Main header background */
+/* Main header with transparent background and no visible bar */
 header {
-    background: url('../images/big_line_bg.jpg') no-repeat center center;
-    background-size: cover;
+    position: absolute;  /* Make header overlay content */
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: transparent; /* Remove background */
+    z-index: 10;  /* Ensures it stays on top of other elements */
 }
 
 /* Navbar container (flex layout for centering items) */
 header.main__header {
-    position: relative;
+    position: absolute;
     z-index: 100;
     width: 100%;
 }
 
 /* Navbar header (logo area) */
 header .navbar-header {
-    display: flex;
+    display: block;
     justify-content: center; /* Center the logo */
     align-items: center;
-    flex-grow: 1;
 }
 
 /* Navbar brand (logo) styles */
 header .navbar-header img {
-    max-height: 80px; /* Ensure the logo is properly sized */
-    width: auto; /* Keep the aspect ratio */
+	display: block;
+    max-height: 100px;
+    width: auto;
 }
 
 /* Navbar left and right sections */
 .navbar-left, .navbar-right {
     display: flex;
-    align-items: center; /* Align vertically */
+    align-items: center;
 }
 
 /* Navbar menu items */
@@ -53,24 +56,35 @@ header .navbar-header img {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 /* Right navigation section */
 .navbar-nav.navbar-right {
     display: flex;
-    margin-left: auto; /* Push right items to the right */
+    margin-left: auto;
 }
 
-/* Navbar links (spacing and color) */
+/* Navbar links */
 .navbar-nav li {
-    margin: 0 15px; /* Space between items */
+    margin: 0 15px;
 }
 
 .navbar-nav li a {
     text-decoration: none;
-    color: #fff; /* Ensure text is visible */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect */
+.navbar-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
+}
 
 /*Typography*/
 a {
